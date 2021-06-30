@@ -14,7 +14,7 @@ apt install -y snapd
 #installing git
 
 add-apt-repository ppa:git-core/ppa
-apt update; apt install git
+apt update; apt install -y git
 
 #installing packages from snap
 
@@ -29,7 +29,7 @@ snap install postman
 
 #installing brave
 
-sudo apt -y install apt-transport-https curl
+sudo apt install -y apt-transport-https curl
 
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 
@@ -37,7 +37,7 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=
 
 sudo apt update
 
-sudo apt -y install brave-browser
+sudo apt install -y brave-browser
 
 #installing mongodb
 
@@ -49,7 +49,7 @@ echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb
 
 sudo apt update
 
-sudo apt -y install mongodb-org
+sudo apt install -y mongodb-org
 
 sudo systemctl start mongod.service
 
@@ -68,4 +68,8 @@ npm i -g nodemon yarn
 #installing other packages
 
 #neofetch
-apt -y install neofetch
+apt install -y neofetch
+
+#cleaning
+apt autoremove
+apt clean
